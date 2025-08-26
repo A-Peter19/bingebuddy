@@ -9,7 +9,7 @@ public class DatabaseManager {
     private static final String DB_URL = "jdbc:sqlite:binge.db";
     private static Connection connection;
     
-    public static Connection getConnection()
+    public static Connection getConnection() {
         if (connection == null) {
             try {
                 connection = DriverManager.getConnection(DB_URL);
@@ -18,9 +18,12 @@ public class DatabaseManager {
             } catch (SQLException e) {
                 System.err.println("Error connecting to database: " + e.getMessage());
                 e.printStackTrace();
-            
             }
         }
         return connection;
+    }
     
+    private static void createTables(){
+        
+    }
 }
